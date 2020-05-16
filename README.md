@@ -23,8 +23,6 @@
   - Google検索などで引っかかる日本語の記事は、ほとんどがバージョン`11以下`で記載されており、ロールの追加など一部の記法が通用しません。下記公式ドキュメントを参照して下さい。
     - [discord.js(ver12.2.0のドキュメント)](https://discord.js.org/#/docs/main/12.2.0/general/welcome "discord.js")
     - [discord.jsのver11からver12へのアップデート内容](https://discordjs.guide/additional-info/changes-in-v12.html#before-you-start "Updating from v11 to v12 | Discord.js Guide")
-- [x] Glitchの利用を前提としたアプリケーションです。
-  - `Package-lock.json`は、[Glitchでは非推奨らしいので](https://support.glitch.com/t/package-lock-json-npm-install/5474 "Package-lock.json & npm install - Glitch Help - Glitch Support")、含まれていません。
 - [x] `reply.json`について
   - `reply.json`では、自動応答の中身を作っています。応答メッセージにおいて、これらの値は置換されます：
     - %%name%%

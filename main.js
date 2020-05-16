@@ -133,7 +133,7 @@ client.on('guildMemberAdd', member => {
       throw new Error(`「${process.env.README_CH_NAME}」のチャンネル取得に失敗しました。\nチャンネル名に変更がなかったか確認して下さい！`);
     }
     
-    //ロール追加
+    // add role
     const kuronya = member.guild.roles.cache.find(role => role.name === process.env.MEMBER_ROLE_NAME);
     if(!kuronya){
       throw new Error('「${process.env.MEMBER_ROLE_NAME}」のロール取得に失敗しました。\nロール名に変更がなかったか確認して下さい！');

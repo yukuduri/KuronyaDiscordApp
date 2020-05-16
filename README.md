@@ -1,4 +1,4 @@
-# This Discord bot working on glitch.com
+# Readme
 
 ## 確認事項
 

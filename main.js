@@ -40,7 +40,7 @@ const dateFormat = (strDate, type) => {
 
 const searchIndex = (txt) => {
   let i=0;
-    for(let i=1; i < res.length; i++){
+  for(let i=1; i < res.length; i++){
     const resWords = res[i]['words'];
     for(let j=0; j < resWords.length; j++){
       if(txt.match(RegExp(resWords[j],'g'))){

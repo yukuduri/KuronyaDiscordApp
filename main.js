@@ -2,7 +2,7 @@
 
 // Response for Uptime Robot
 const http = require('http');
-http.createServer((request, response) =>{
+http.createServer((request, response) => {
   response.writeHead(200, {'Content-Type': 'text/plain'});
   response.end('Discord bot is active now \n');
 }).listen(3000);
@@ -20,9 +20,6 @@ const RandomNumber = require('./RandomNumber.js');
 const RandNum = new RandomNumber;
 const moment = require('moment-timezone');
 
-
-
-
 //define function
 const dateFormat = (strDate, type) => {
   let str = '';
@@ -36,7 +33,6 @@ const dateFormat = (strDate, type) => {
   }
   return ary;
 }
-
 const searchIndex = (txt) => {
   let i=0;
   for(let i=1; i < res.length; i++){
@@ -49,8 +45,7 @@ const searchIndex = (txt) => {
   }
   return i;
 }
-
-const createMessage = (txt, name) =>{
+const createMessage = (txt, name) => {
   const now = moment.tz("Asia/Tokyo").format();
   const currentDate = dateFormat(now, 'date');
   const strCorrDate = currentDate[0]+'年'+currentDate[1]+'月'+currentDate[2]+'日';
@@ -144,7 +139,7 @@ client.on('guildMemberAdd', member => {
     member.roles.add(kuronya).then(lobbyCh.send(`${member}さんいらっしゃいませ！\n「${readmeCh}」をご参照ください！\n「${process.env.MEMBER_ROLE_NAME}」のロールを付与しましたので、\nメンバー限定チャンネルは既に閲覧可能になってるかと思われます。`)).catch(throwRoleErr);
     
   }catch(e){
-    adminCh.send(e.message);
+    adminCh.send(`Bot Error:\n${e.message}`);
   }
   
   

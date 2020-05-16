@@ -2,10 +2,19 @@
 
 // Response for Uptime Robot
 const http = require('http');
-http.createServer((request, response) => {
-  response.writeHead(200, {'Content-Type': 'text/plain'});
-  response.end('Discord bot is active now \n');
-}).listen(3000);
+const fs = require('fs');
+
+const server = http.createServer();
+const doRequest = (req, res) => {
+  fs.readFile('./index.html', 'UTF-8', (err, data) => {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    res.end();
+  });
+}
+server.on('request', doRequest);
+server.listen(3000);
+console.log('Server running!');
 
 // Discord bot implements
 const discord = require('discord.js');

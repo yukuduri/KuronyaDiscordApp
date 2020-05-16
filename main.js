@@ -2,10 +2,9 @@
 
 // Response for Uptime Robot
 const http = require('http');
-http.createServer((request, response) =>
-{
-	response.writeHead(200, {'Content-Type': 'text/plain'});
-	response.end('Discord bot is active now \n');
+http.createServer((request, response) =>{
+  response.writeHead(200, {'Content-Type': 'text/plain'});
+  response.end('Discord bot is active now \n');
 }).listen(3000);
 
 // Discord bot implements
@@ -112,7 +111,7 @@ client.on('message', message =>
     　}
   　}
   }catch(e){
-      adminCh.send(`Bot Error:\n${e.message}`);
+    adminCh.send(`Bot Error:\n${e.message}`);
   }
 });
 
@@ -151,10 +150,9 @@ client.on('guildMemberAdd', member => {
   
 });
 
-if(process.env.DISCORD_BOT_TOKEN == undefined)
-{
-	console.log('please set ENV: DISCORD_BOT_TOKEN');
-	process.exit(0);
+if(!process.env.DISCORD_BOT_TOKEN){
+  console.log('please set ENV: DISCORD_BOT_TOKEN');
+  process.exit(0);
 }
 
 client.login( process.env.DISCORD_BOT_TOKEN );

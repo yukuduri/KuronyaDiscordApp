@@ -73,8 +73,16 @@ const createMessage = (txt, name) => {
   return msg;
 }
 
-client.on('ready', message =>
+client.on('ready', () =>
 {
+  //テスト用コード。サーバー起動時、メッセージを送信できます
+  const testChName = 'test_bot';
+  const testCh = client.channels.cache.find(ch => ch.name === testChName);
+  if (testCh) {
+    testCh.send('I am ready!');
+  }else{
+    console.log(`「${testChName}」のチャンネル取得に失敗しました。`);
+  }
   client.user.setActivity('BOT with discord.js');
 	console.log('bot is ready!');
 });
